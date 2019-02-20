@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1Amdal", "Lab1Amdal\Lab1Amdal.csproj", "{5DA06D19-5365-4DE7-84B5-9653A102EC8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1Amdal.Tests", "Lab1Amdal.Tests\Lab1Amdal.Tests.csproj", "{072D929D-6B98-48CD-B40D-B8C5D41BCBB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DA06D19-5365-4DE7-84B5-9653A102EC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA06D19-5365-4DE7-84B5-9653A102EC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA06D19-5365-4DE7-84B5-9653A102EC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA06D19-5365-4DE7-84B5-9653A102EC8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072D929D-6B98-48CD-B40D-B8C5D41BCBB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072D929D-6B98-48CD-B40D-B8C5D41BCBB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072D929D-6B98-48CD-B40D-B8C5D41BCBB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072D929D-6B98-48CD-B40D-B8C5D41BCBB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD6E297D-6815-4508-B330-D6A2F13F53AC}
+	EndGlobalSection
+EndGlobal
