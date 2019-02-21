@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.radioButtonA = new System.Windows.Forms.RadioButton();
@@ -62,14 +62,14 @@
             // 
             // mainChart
             // 
-            chartArea6.Name = "ChartArea1";
-            this.mainChart.ChartAreas.Add(chartArea6);
+            chartArea9.Name = "ChartArea1";
+            this.mainChart.ChartAreas.Add(chartArea9);
             this.mainChart.Location = new System.Drawing.Point(13, 13);
             this.mainChart.Name = "mainChart";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Name = "MainSeries";
-            this.mainChart.Series.Add(series6);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Name = "MainSeries";
+            this.mainChart.Series.Add(series9);
             this.mainChart.Size = new System.Drawing.Size(451, 300);
             this.mainChart.TabIndex = 0;
             this.mainChart.Text = "chart1";
@@ -133,7 +133,7 @@
             this.textBoxAto.Name = "textBoxAto";
             this.textBoxAto.Size = new System.Drawing.Size(100, 20);
             this.textBoxAto.TabIndex = 3;
-            this.textBoxAto.Text = "1";
+            this.textBoxAto.Text = "0,99";
             // 
             // label1
             // 
@@ -236,7 +236,7 @@
             this.textBoxC.Name = "textBoxC";
             this.textBoxC.Size = new System.Drawing.Size(100, 20);
             this.textBoxC.TabIndex = 18;
-            this.textBoxC.Text = "1.2";
+            this.textBoxC.Text = "1,2";
             // 
             // label8
             // 
@@ -270,7 +270,7 @@
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.Size = new System.Drawing.Size(100, 20);
             this.textBoxA.TabIndex = 14;
-            this.textBoxA.Text = "0.5";
+            this.textBoxA.Text = "0,5";
             // 
             // label10
             // 
@@ -287,7 +287,7 @@
             this.textBoxStep.Name = "textBoxStep";
             this.textBoxStep.Size = new System.Drawing.Size(100, 20);
             this.textBoxStep.TabIndex = 20;
-            this.textBoxStep.Text = "0.01";
+            this.textBoxStep.Text = "0,01";
             // 
             // buttonDraw
             // 
@@ -297,6 +297,7 @@
             this.buttonDraw.TabIndex = 22;
             this.buttonDraw.Text = "Draw";
             this.buttonDraw.UseVisualStyleBackColor = true;
+            this.buttonDraw.Click += new System.EventHandler(this.buttonDraw_Click);
             // 
             // Form1
             // 

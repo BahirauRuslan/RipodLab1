@@ -40,7 +40,7 @@ namespace Lab1Amdal
                 }
                 else
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("\'a\' should be more than(or equal) 0 and less(or equal) than 1");
                 }
             }
         }
@@ -60,7 +60,7 @@ namespace Lab1Amdal
                 }
                 else
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("\'c\' should be more than(or equal) 0");
                 }
             }
         }
@@ -80,7 +80,7 @@ namespace Lab1Amdal
                 }
                 else
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("\'n\' should be more than 0");
                 }
             }
         }

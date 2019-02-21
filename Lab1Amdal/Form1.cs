@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab1Amdal
 {
     public partial class Form1 : Form
     {
-        private static string DEFAULT_STEP = "0.01";
+        private static string DEFAULT_STEP = "0,01";
         private static string DEFAULT_NSTEP = "1";
 
         public Form1()
@@ -75,6 +68,48 @@ namespace Lab1Amdal
                 textBoxC.Enabled = false;
 
                 textBoxStep.Text = DEFAULT_STEP;
+            }
+        }
+
+        private void buttonDraw_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mainChart.Series[0].Points.Clear();
+                Painter painter;
+                var amdal = new Amdal();
+                if (radioButtonA.Checked)
+                {
+                    amdal.N = int.Parse(textBoxN.Text);
+                    amdal.C = double.Parse(textBoxC.Text);
+                    painter = new Painter(amdal, mainChart);
+                    painter.PaintRA(double.Parse(textBoxAfrom.Text), 
+                        double.Parse(textBoxAto.Text), double.Parse(textBoxStep.Text));
+                }
+                else if (radioButtonN.Checked)
+                {
+                    amdal.A = double.Parse(textBoxA.Text);
+                    amdal.C = double.Parse(textBoxC.Text);
+                    painter = new Painter(amdal, mainChart);
+                    painter.PaintRN(int.Parse(textBoxNfrom.Text),
+                        int.Parse(textBoxNto.Text), int.Parse(textBoxStep.Text));
+                }
+                else if (radioButtonC.Checked)
+                {
+                    amdal.N = int.Parse(textBoxN.Text);
+                    amdal.A = double.Parse(textBoxA.Text);
+                    painter = new Painter(amdal, mainChart);
+                    painter.PaintRC(double.Parse(textBoxCfrom.Text),
+                        double.Parse(textBoxCto.Text), double.Parse(textBoxStep.Text));
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Incorrect format of number");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
         }
     }
