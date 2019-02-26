@@ -5,15 +5,17 @@ namespace Lab1Amdal
     public class Amdal
     {
         private double a;
-        private double c;
+        private double ca;
+        private double ct;
         private int n;
 
         public Amdal() { }
 
-        public Amdal(double a, double c, int n)
+        public Amdal(double a, double ca, double ct, int n)
         {
             A = a;
-            C = c;
+            Ca = ca;
+            Ct = ct;
             N = n;
         }
 
@@ -21,7 +23,7 @@ namespace Lab1Amdal
         {
             get
             {
-                return 1 / (a + ((1 - a) / n) + c);
+                return 1 / (a + ((1 - a) / n) + ca*ct);
             }
         }
 
@@ -45,22 +47,42 @@ namespace Lab1Amdal
             }
         }
 
-        public double C
+        public double Ca
         {
             get
             {
-                return c;
+                return ca;
             }
 
             set
             {
                 if (value >= 0)
                 {
-                    c = value;
+                    ca = value;
                 }
                 else
                 {
-                    throw new ArgumentException("\'c\' should be more than(or equal) 0");
+                    throw new ArgumentException("\'Ca\' should be more than(or equal) 0");
+                }
+            }
+        }
+
+        public double Ct
+        {
+            get
+            {
+                return ct;
+            }
+
+            set
+            {
+                if (value >= 0)
+                {
+                    ct = value;
+                }
+                else
+                {
+                    throw new ArgumentException("\'Ct\' should be more than(or equal) 0");
                 }
             }
         }

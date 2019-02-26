@@ -22,12 +22,15 @@ namespace Lab1Amdal
                 textBoxAto.Enabled = true;
                 textBoxNfrom.Enabled = false;
                 textBoxNto.Enabled = false;
-                textBoxCfrom.Enabled = false;
-                textBoxCto.Enabled = false;
+                textBoxCafrom.Enabled = false;
+                textBoxCato.Enabled = false;
+                textBoxCtfrom.Enabled = false;
+                textBoxCtto.Enabled = false;
 
                 textBoxA.Enabled = false;
                 textBoxN.Enabled = true;
-                textBoxC.Enabled = true;
+                textBoxCa.Enabled = true;
+                textBoxCt.Enabled = true;
 
                 textBoxStep.Text = DEFAULT_STEP;
             }
@@ -41,12 +44,15 @@ namespace Lab1Amdal
                 textBoxAto.Enabled = false;
                 textBoxNfrom.Enabled = true;
                 textBoxNto.Enabled = true;
-                textBoxCfrom.Enabled = false;
-                textBoxCto.Enabled = false;
+                textBoxCafrom.Enabled = false;
+                textBoxCato.Enabled = false;
+                textBoxCtfrom.Enabled = false;
+                textBoxCtto.Enabled = false;
 
                 textBoxA.Enabled = true;
                 textBoxN.Enabled = false;
-                textBoxC.Enabled = true;
+                textBoxCa.Enabled = true;
+                textBoxCt.Enabled = true;
 
                 textBoxStep.Text = DEFAULT_NSTEP;
             }
@@ -54,18 +60,21 @@ namespace Lab1Amdal
 
         private void radioButtonC_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButtonC.Checked)
+            if (radioButtonCa.Checked)
             {
                 textBoxAfrom.Enabled = false;
                 textBoxAto.Enabled = false;
                 textBoxNfrom.Enabled = false;
                 textBoxNto.Enabled = false;
-                textBoxCfrom.Enabled = true;
-                textBoxCto.Enabled = true;
+                textBoxCafrom.Enabled = true;
+                textBoxCato.Enabled = true;
+                textBoxCtfrom.Enabled = false;
+                textBoxCtto.Enabled = false;
 
                 textBoxA.Enabled = true;
                 textBoxN.Enabled = true;
-                textBoxC.Enabled = false;
+                textBoxCa.Enabled = false;
+                textBoxCt.Enabled = true;
 
                 textBoxStep.Text = DEFAULT_STEP;
             }
@@ -81,7 +90,8 @@ namespace Lab1Amdal
                 if (radioButtonA.Checked)
                 {
                     amdal.N = int.Parse(textBoxN.Text);
-                    amdal.C = double.Parse(textBoxC.Text);
+                    amdal.Ca = double.Parse(textBoxCa.Text);
+                    amdal.Ct = double.Parse(textBoxCt.Text);
                     painter = new Painter(amdal, mainChart);
                     painter.PaintRA(double.Parse(textBoxAfrom.Text), 
                         double.Parse(textBoxAto.Text), double.Parse(textBoxStep.Text));
@@ -89,18 +99,29 @@ namespace Lab1Amdal
                 else if (radioButtonN.Checked)
                 {
                     amdal.A = double.Parse(textBoxA.Text);
-                    amdal.C = double.Parse(textBoxC.Text);
+                    amdal.Ca = double.Parse(textBoxCa.Text);
+                    amdal.Ct = double.Parse(textBoxCt.Text);
                     painter = new Painter(amdal, mainChart);
                     painter.PaintRN(int.Parse(textBoxNfrom.Text),
                         int.Parse(textBoxNto.Text), int.Parse(textBoxStep.Text));
                 }
-                else if (radioButtonC.Checked)
+                else if (radioButtonCa.Checked)
                 {
                     amdal.N = int.Parse(textBoxN.Text);
                     amdal.A = double.Parse(textBoxA.Text);
+                    amdal.Ct = double.Parse(textBoxCt.Text);
                     painter = new Painter(amdal, mainChart);
-                    painter.PaintRC(double.Parse(textBoxCfrom.Text),
-                        double.Parse(textBoxCto.Text), double.Parse(textBoxStep.Text));
+                    painter.PaintRCa(double.Parse(textBoxCafrom.Text),
+                        double.Parse(textBoxCato.Text), double.Parse(textBoxStep.Text));
+                }
+                else if (radioButtonCt.Checked)
+                {
+                    amdal.N = int.Parse(textBoxN.Text);
+                    amdal.A = double.Parse(textBoxA.Text);
+                    amdal.Ca = double.Parse(textBoxCa.Text);
+                    painter = new Painter(amdal, mainChart);
+                    painter.PaintRCt(double.Parse(textBoxCtfrom.Text),
+                        double.Parse(textBoxCtto.Text), double.Parse(textBoxStep.Text));
                 }
             }
             catch (FormatException)
@@ -111,6 +132,25 @@ namespace Lab1Amdal
             {
                 MessageBox.Show(exception.Message);
             }
+        }
+
+        private void radioButtonCt_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxAfrom.Enabled = false;
+            textBoxAto.Enabled = false;
+            textBoxNfrom.Enabled = false;
+            textBoxNto.Enabled = false;
+            textBoxCafrom.Enabled = false;
+            textBoxCato.Enabled = false;
+            textBoxCtfrom.Enabled = true;
+            textBoxCtto.Enabled = true;
+
+            textBoxA.Enabled = true;
+            textBoxN.Enabled = true;
+            textBoxCa.Enabled = true;
+            textBoxCt.Enabled = false;
+
+            textBoxStep.Text = DEFAULT_STEP;
         }
     }
 }

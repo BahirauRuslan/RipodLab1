@@ -46,15 +46,27 @@ namespace Lab1Amdal
             }
         }
 
-        public void PaintRC(double cFrom, double cTo, double step)
+        public void PaintRCa(double caFrom, double caTo, double step)
         {
-            if (cFrom > cTo) throw new ArgumentException("AFrom must be less than Ato");
+            if (caFrom > caTo) throw new ArgumentException("CaFrom must be less than Cato");
             if (step <= 0) throw new ArgumentException("Step must be more than 0");
-            amdal.C = cFrom;
-            while (amdal.C <= cTo)
+            amdal.Ca = caFrom;
+            while (amdal.Ca <= caTo)
             {
-                chart.Series[0].Points.AddXY(amdal.C, amdal.R);
-                amdal.C += step;
+                chart.Series[0].Points.AddXY(amdal.Ca, amdal.R);
+                amdal.Ca += step;
+            }
+        }
+
+        public void PaintRCt(double ctFrom, double ctTo, double step)
+        {
+            if (ctFrom > ctTo) throw new ArgumentException("CtFrom must be less than Ctto");
+            if (step <= 0) throw new ArgumentException("Step must be more than 0");
+            amdal.Ct = ctFrom;
+            while (amdal.Ct <= ctTo)
+            {
+                chart.Series[0].Points.AddXY(amdal.Ct, amdal.R);
+                amdal.Ct += step;
             }
         }
     }
